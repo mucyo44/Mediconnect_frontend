@@ -104,7 +104,7 @@ const LoginScreen({super.key});
 
               children: [
                 Flexible(child:Divider(color: Colors.grey,thickness: 0.5,indent:60,endIndent:5)),
-                 Flexible(child:Divider(color: Colors.grey,thickness: 0.5,indent:60,endIndent:5)),
+                Text(' OR' ,style: TextStyle(fontFamily: 'Poppins',fontSize: 16.0,fontWeight: FontWeight.w400, color: Colors.black.withOpacity(0.1)),),
                   Flexible(child:Divider(color: Colors.grey,thickness: 0.5,indent:60,endIndent:5)),
               ],)
                 
