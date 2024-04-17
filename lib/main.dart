@@ -4,7 +4,7 @@ import 'package:mediconnect/screens/signinscreen.dart';
 import 'package:mediconnect/screens/splashscreen.dart';
 import 'package:mediconnect/screens/onBoardController.dart';
 import 'package:mediconnect/screens/welcomescreen.dart';
-import 'package:mediconnect/screens/loginscreen.dart';
+import 'package:mediconnect/screens/signupscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme:ThemeData(
         useMaterial3: true
       ),
-      home: const SigninScreen()
+      home: const WelcomeScreen()
     );
   }
 }

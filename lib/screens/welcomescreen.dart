@@ -2,81 +2,84 @@ import 'package:flutter/material.dart';
 import 'package:mediconnect/screens/images.dart';
 import 'package:mediconnect/screens/text.dart';
 
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.only(
-          top: 0.0,
-          left:0.0,
-          bottom: 0.0,
-          right:0.0
-        ),
-       child:Column(
+    return Scaffold(
+        body: Align(
+      alignment: Alignment.center,
+
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image(image:AssetImage(Images.logo),height: 300.0,width: 330.0,),
           Column(children: [
-            Column( 
-              crossAxisAlignment:CrossAxisAlignment.center ,
-              children: [
-                Container(
-                  height: 300,
-                  padding: EdgeInsets.fromLTRB(56.0, 50.0, 0.0, 0.0),
-                child:Image(image:AssetImage(Images.logo)),
-                ),
-                
-            
-            Container(
-              width: 300.0,
-              height: 30.0,
-              padding: EdgeInsets.fromLTRB(55.0, 0.0 ,0.0, 0.0),
-              child:Text(
-                  Texts.headline, style:TextStyle(
+             Text( Texts.headline, style: 
+            TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 22.0,
                     fontWeight: FontWeight.w700,
-                    color: Color.fromARGB(255, 4, 4, 5),
+                    letterSpacing: 1,
+                    color: Color.fromARGB(255, 43, 43, 44),
                     height: 0.0
-                  ),
-                 
-                  ),
-            ),
-              const SizedBox(height: 20.0,) ,
-              Center(child: Container(
-                width:300.0,
-                height:48.0,
-             child:Center( child:Text(
-                  Texts.subheadline, style:TextStyle(
-                    fontFamily: 'Poppins',
+
+          ),),
+           const SizedBox(height: 30.0,) ,
+          Container(
+            width: 300.0,
+            height: 48,
+          child:Text(Texts.subheadline , style: TextStyle(
+            fontFamily: 'Poppins',
                     fontSize: 16.0,
                     fontWeight: FontWeight.w400,
                     letterSpacing: 1,
                     color: Color.fromARGB(255, 43, 43, 44),
                     height: 0.0
-)
+          ),
+           textAlign: TextAlign.center,),
+           alignment: Alignment.center,),
+            const SizedBox(height: 20.0,) ,
+           ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO( 64, 124, 226,1),
+                      minimumSize: Size(250, 50)),
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(255, 255, 255, 255)),
                   ),
-             )
+                ),
+                 const SizedBox(height: 20.0,) ,
+                 OutlinedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                     
+                      minimumSize: Size(250, 50),
+                       side:BorderSide(
+                        color: Color.fromRGBO( 64, 124, 226,1)),
+                     
+                      ),
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        color:  Color.fromRGBO( 64, 124, 226,1),
+                  ),
+                ),
+                 )
 
-              ),)
-
- 
-                    
-           ] )
-              ],
-            )
-           
           ],)
-
-        ),
-       ) 
-      
-    );
+         
+        ],),
+    ));
   }
 }
-
-
-
