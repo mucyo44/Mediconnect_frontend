@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mediconnect/screens/onboardingscreen.dart';
+import 'package:mediconnect/screens/screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,7 +11,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
- 
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

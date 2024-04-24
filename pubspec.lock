@@ -160,14 +160,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-  icons_plus:
+  iconsax:
     dependency: "direct main"
     description:
-      name: icons_plus
-      sha256: b613ec1deac96e9ef5c8065f2d7325967818bc3f4e118a375e50292761849ea6
+      name: iconsax
+      sha256: fb0144c61f41f3f8a385fadc27783ea9f5359670be885ed7f35cef32565d5228
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "0.0.8"
   introduction_screen:
     dependency: "direct main"
     description:

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:mediconnect/consts/icons.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({Key? key, required this.controller}) : super(key: key);
@@ -10,24 +12,24 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-    var obsecureText = true;
+  var obsecureText = true;
   @override
   Widget build(BuildContext context) {
-  
     return TextField(
         controller: widget.controller,
         obscureText: obsecureText,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.lock_outline),
+          prefixIcon: Icon(Iconsax.lock),
           hintText: 'Enter your password',
           suffixIcon: GestureDetector(
               onTap: () {
-
                 setState(() {
                   obsecureText = !obsecureText;
                 });
               },
-              child: obsecureText? Icon(Icons.visibility_off_outlined) : Icon(Icons.visibility_outlined)),
+              child: obsecureText
+                  ? Icon(Icons.visibility_off_outlined)
+                  : Icon(Icons.visibility_outlined)),
           hintStyle:
               TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
           fillColor: Colors.black.withOpacity(0.1),

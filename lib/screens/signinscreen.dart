@@ -18,6 +18,7 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: Align(
             alignment: Alignment.center,
             child: Column(
@@ -26,7 +27,7 @@ class _SigninScreenState extends State<SigninScreen> {
               children: [
                 Row(
                   children: [
-                    SizedBox(width: 10.0),
+                    SizedBox(width: 15.0),
                     IconButton(
                         onPressed: () {},
                         icon: Icon(
