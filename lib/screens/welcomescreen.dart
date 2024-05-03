@@ -67,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                      
                       ),
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 16.0,

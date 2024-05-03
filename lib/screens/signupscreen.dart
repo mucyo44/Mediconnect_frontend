@@ -6,21 +6,20 @@ import 'package:mediconnect/widgets/password_field.dart';
 import 'package:mediconnect/consts/icons.dart';
 
 class SignUpScreen extends StatefulWidget {
-
-   const SignUpScreen({super.key});
+  const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SigninScreenState();
 }
 
 class _SigninScreenState extends State<SignUpScreen> {
-     TextEditingController passwordController = TextEditingController();
-     bool? isChecked = false;
+  TextEditingController passwordController = TextEditingController();
+  bool? isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: Align(
             alignment: Alignment.center,
             child: Column(
@@ -48,13 +47,11 @@ class _SigninScreenState extends State<SignUpScreen> {
                     ),
                   ],
                 ),
-                    Padding(
+                Padding(
                     padding: EdgeInsets.all(30.0),
-                    
                     child: TextField(
                         decoration: InputDecoration(
-                
-                      prefixIcon: Icon(Iconsax.user ),
+                      prefixIcon: Icon(Iconsax.user),
                       hintText: 'Enter your name',
                       hintStyle: TextStyle(
                           fontFamily: 'Poppins', fontWeight: FontWeight.w400),
@@ -68,11 +65,9 @@ class _SigninScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(6.0),
                           borderSide: BorderSide(
                               color: Colors.transparent, width: 0.0)),
-                    ))
-                    ),
+                    ))),
                 Padding(
-                    
-                     padding: EdgeInsets.only(top: 0.0, left: 30.0, right: 30.0),
+                    padding: EdgeInsets.only(top: 0.0, left: 30.0, right: 30.0),
                     child: TextField(
                         decoration: InputDecoration(
                       prefixIcon: Icon(Icons.mail_outlined),
@@ -89,11 +84,10 @@ class _SigninScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(6.0),
                           borderSide: BorderSide(
                               color: Colors.transparent, width: 0.0)),
-                    ))
-                    ),
-                     Padding(
-                    
-                     padding: EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
+                    ))),
+                Padding(
+                    padding:
+                        EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
                     child: TextField(
                         decoration: InputDecoration(
                       prefixIcon: Icon(Icons.phone_outlined),
@@ -110,70 +104,69 @@ class _SigninScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(6.0),
                           borderSide: BorderSide(
                               color: Colors.transparent, width: 0.0)),
-                    ))
-                    ),
+                    ))),
                 Padding(
-                    padding: EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
-                     child:     PasswordField(controller: passwordController,)
+                    padding:
+                        EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
+                    child: PasswordField(
+                      controller: passwordController,
+                    )),
+                const SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.only(top: 30.0, left: 20.0, bottom: 30.0),
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        value: isChecked,
+                        onChanged: (newBool) {
+                          setState(() {
+                            isChecked = newBool;
+                          });
+                        },
+                      ),
+                      Container(
+                          width: 314.0,
+                          margin: EdgeInsets.only(top: 20.0),
+                          child: RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                                text: 'I agree to the healthcare ',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black.withOpacity(1))),
+                            TextSpan(
+                                text: ' Terms of Service',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color.fromARGB(255, 64, 124, 226))),
+                            WidgetSpan(
+                                child: SizedBox(
+                              width: 4.0,
+                            )),
+                            TextSpan(
+                                text: 'and',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black.withOpacity(1))),
+                            TextSpan(
+                                text: ' Privacy Policy',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color.fromARGB(255, 64, 124, 226))),
+                          ])))
+                    ],
                   ),
-
-              
-                const SizedBox(height:20.0),
-                Padding(padding: EdgeInsets.only(top : 30.0,left:20.0,bottom: 30.0 ),
-                 child : Row(
-                  
-                  children: [
-                      Checkbox(value: isChecked,onChanged:(newBool){
-                      setState((){
-                       isChecked = newBool;
-                      });
-                    },),
-                    Container(
-                      width: 314.0,
-                      margin: EdgeInsets.only(top: 20.0),
-                      
-                child :  RichText(
-                    text: TextSpan(children: [
-                      TextSpan(
-                          text: 'I agree to the healthcare ',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(1))),
-                     
-                      TextSpan(
-                          text: ' Terms of Service',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromARGB(255, 64, 124, 226))),
-                               WidgetSpan(
-                          child: SizedBox(
-                        width: 4.0,
-                      )),
-                               TextSpan(
-                          text: 'and',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(1))),
-                              TextSpan(
-                          text: ' Privacy Policy',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromARGB(255, 64, 124, 226))),
-                    ]))
-                    )
-
-                ],),),
-
-                      const SizedBox(height: 20.0),
-                      RichText(
+                ),
+                const SizedBox(height: 20.0),
+                RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(children: [
                       TextSpan(
@@ -196,7 +189,7 @@ class _SigninScreenState extends State<SignUpScreen> {
                               color: Color.fromARGB(255, 64, 124, 226)))
                     ])),
                 const SizedBox(height: 20.0),
-                 ElevatedButton(
+                ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 64, 124, 226),
@@ -210,8 +203,6 @@ class _SigninScreenState extends State<SignUpScreen> {
                         color: Color.fromARGB(255, 255, 255, 255)),
                   ),
                 ),
-                
-               
               ],
             )));
   }
