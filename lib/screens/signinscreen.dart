@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mediconnect/consts/icons.dart';
+import 'package:mediconnect/screens/signupscreen.dart';
 import 'package:mediconnect/widgets/auth_button.dart';
 import 'package:mediconnect/widgets/password_field.dart';
 
 class SigninScreen extends StatefulWidget {
-
-   const SigninScreen({super.key});
+  const SigninScreen({super.key});
 
   @override
   State<SigninScreen> createState() => _SigninScreenState();
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-     TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: Align(
             alignment: Alignment.center,
             child: Column(
@@ -48,7 +48,6 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
                 Padding(
                     padding: EdgeInsets.all(30.0),
-                    
                     child: TextField(
                         decoration: InputDecoration(
                       prefixIcon: Icon(Icons.mail_outlined),
@@ -65,14 +64,14 @@ class _SigninScreenState extends State<SigninScreen> {
                           borderRadius: BorderRadius.circular(6.0),
                           borderSide: BorderSide(
                               color: Colors.transparent, width: 0.0)),
-                    ))
-                    ),
+                    ))),
                 Padding(
                     padding: EdgeInsets.only(top: 0.0, left: 30.0, right: 30.0),
-                     child:     PasswordField(controller: passwordController,)
-                  ),
+                    child: PasswordField(
+                      controller: passwordController,
+                    )),
                 Padding(
-                     padding: EdgeInsets.only(right: 40.0),
+                    padding: EdgeInsets.only(right: 40.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -84,9 +83,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                   fontFamily: 'Poppins',
                                   fontSize: 13.0,
                                   fontWeight: FontWeight.w500,
-                                ))
-              
-                    )
+                                )))
                       ],
                     )),
                 const SizedBox(height: 25.0),
@@ -105,28 +102,33 @@ class _SigninScreenState extends State<SigninScreen> {
                   ),
                 ),
                 const SizedBox(height: 30.0),
-                RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(children: [
-                      TextSpan(
-                          text: 'Don’t have an account?',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(1))),
-                      WidgetSpan(
-                          child: SizedBox(
-                        width: 4.0,
-                      )),
-                      TextSpan(
-                          text: ' Sign up',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w600,
-                              color: Color.fromARGB(255, 64, 124, 226)))
-                    ])),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Don’t have an account?',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black.withOpacity(1))),
+                    SizedBox(
+                      width: 4.0,
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpScreen()));
+                        },
+                        child: Text(' Sign up',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                color: Color.fromARGB(255, 64, 124, 226))))
+                  ],
+                ),
                 const SizedBox(height: 40.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mediconnect/screens/signinscreen.dart';
 import 'package:mediconnect/widgets/password_field.dart';
 import 'package:mediconnect/consts/icons.dart';
 
@@ -166,28 +167,35 @@ class _SigninScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const SizedBox(height: 20.0),
-                RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(children: [
-                      TextSpan(
-                          text: 'Don’t have an account?',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black.withOpacity(1))),
-                      WidgetSpan(
-                          child: SizedBox(
-                        width: 4.0,
-                      )),
-                      TextSpan(
-                          text: ' Sign In',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w600,
-                              color: Color.fromARGB(255, 64, 124, 226)))
-                    ])),
+                                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Already have an account?',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black.withOpacity(1))),
+                    SizedBox(
+                      width: 4.0,
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SigninScreen()));
+                        },
+                        child: Text(' Sign in',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                color: Color.fromARGB(255, 64, 124, 226))))
+                  ],
+                ),
+              
+                
                 const SizedBox(height: 20.0),
                 ElevatedButton(
                   onPressed: () {},

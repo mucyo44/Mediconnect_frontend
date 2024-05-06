@@ -22,5 +22,9 @@ class Images {
   static const String ic_cash = "assets/images/ic_cash.png";
   static const String ic_visa = "assets/images/ic_visa.svg";
   static const String ic_arrow = "assets/images/ic_arrow.svg";
-  static const String healthfood = "assets/images/health food";
+  static const String healthfood = "assets/images/Ellipses2.png";
+  static const String staysober = "assets/images/Ellipses1.png";
+  static const String stayhydrated = "assets/images/Ellipses.png";
+  static const String dosport = "assets/images/Ellipse.png";
+  static const String insulin = "assets/images/Rectangle.png";
 }

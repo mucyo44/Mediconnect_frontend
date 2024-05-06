@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,6 +13,7 @@ import 'package:mediconnect/widgets/curveclippath.dart';
 import 'package:mediconnect/consts/size.dart';
 import 'package:mediconnect/widgets/search.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
@@ -37,89 +39,83 @@ class HomeScreen extends StatelessWidget {
                 )),
           ),
           SearchBars(),
-          Stack(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 20.0),
-                        width: 60.0,
-                        height: 57.0,
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color.fromRGBO(64, 124, 226, 1)),
-                        child: SvgPicture.asset(Images.doctor),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20.0),
+                      width: 60.0,
+                      height: 57.0,
+                      padding: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromRGBO(64, 124, 226, 1)),
+                      child: SvgPicture.asset(Images.doctor),
+                    ),
+                    Text(
+                      'Hospitals',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
                       ),
-                      Text(
-                        'Hospitals',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(width: 30.0),
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 20.0),
-                        width: 60.0,
-                        height: 57.0,
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color.fromRGBO(64, 124, 226, 1)),
-                        child: SvgPicture.asset(Images.pharmacy),
+                    )
+                  ],
+                ),
+                SizedBox(width: 30.0),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20.0),
+                      width: 60.0,
+                      height: 57.0,
+                      padding: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromRGBO(64, 124, 226, 1)),
+                      child: SvgPicture.asset(Images.pharmacy),
+                    ),
+                    Text(
+                      'Medication',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
                       ),
-                      Text(
-                        'Medication',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(width: 30.0),
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 20.0),
-                        width: 60.0,
-                        height: 57.0,
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color.fromRGBO(64, 124, 226, 1)),
-                        child: SvgPicture.asset(Images.ambulance),
+                    )
+                  ],
+                ),
+                SizedBox(width: 30.0),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20.0),
+                      width: 60.0,
+                      height: 57.0,
+                      padding: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromRGBO(64, 124, 226, 1)),
+                      child: SvgPicture.asset(Images.ambulance),
+                    ),
+                    Text(
+                      'Ambulance',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w400,
                       ),
-                      Text(
-                        'Ambulance',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-              Positioned(
-                child: Container(
-                    child: Column(
-                  children: [Row(), Row(), Row(), Row()],
-                )),
-              )
-            ],
-          )
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 30.0,),
+          ContainerSlider()
         ],
       )),
     );
@@ -195,42 +191,49 @@ class ContainerSlider extends StatefulWidget {
 class _ContainerSliderState extends State<ContainerSlider> {
   final myitems = [
     Containers(
-        image: Images.healthfood,
-        text: Texts.title1,
-        subtitle: Texts.subtitle1),
+        image: Images.dosport, text: Texts.title1, subtitle: Texts.subtitle1),
     Containers(
-        image: Images.healthfood,
+        image: Images.stayhydrated,
         text: Texts.title2,
         subtitle: Texts.subtitle2),
     Containers(
-        image: Images.healthfood,
-        text: Texts.title3,
-        subtitle: Texts.subtitle3),
+        image: Images.staysober, text: Texts.title3, subtitle: Texts.subtitle3),
     Containers(
-        image: Images.healthfood, text: Texts.title4, subtitle: Texts.subtitle4)
+        image: Images.healthfood,
+        text: Texts.title4,
+        subtitle: Texts.subtitle4),
   ];
   int myCurrentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            child: Column(children: [
-      CarouselSlider(
-          options: CarouselOptions(
-              autoPlay: true,
-              height: 150.0,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              autoPlayAnimationDuration: const Duration(microseconds: 800),
-              autoPlayInterval: const Duration(seconds: 2),
-              enlargeCenterPage: true,
-              aspectRatio: 2.0,
-              onPageChanged: ((index, reason) {
-                setState(() {
-                  myCurrentIndex = index;
-                });
-              })),
-          items: myitems),
-    ])));
+    return Stack(children: [
+      Column(children: [
+        CarouselSlider(
+            options: CarouselOptions(
+                autoPlay: true,
+               
+                autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayAnimationDuration: const Duration(microseconds: 800),
+                autoPlayInterval: const Duration(seconds: 60),
+                enlargeCenterPage: true,
+                aspectRatio: 2.0,
+                onPageChanged: ((index, reason) {
+                  setState(() {
+                    myCurrentIndex = index;
+                  });
+                })),
+            items: myitems),
+            AnimatedSmoothIndicator(activeIndex: myCurrentIndex,
+             count: myitems.length,
+             effect: WormEffect( 
+              dotHeight: 5,
+              dotWidth: 5,
+              spacing: 5,
+              dotColor: Colors.black,
+              activeDotColor: Colors.blue
+             ),)
+      ])
+    ]);
   }
 }
 
@@ -243,48 +246,47 @@ class Containers extends StatelessWidget {
   final String image, text, subtitle;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            width: 422.0,
-            height: 309.0,
-            padding: EdgeInsets.symmetric(horizontal: 30.0),
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 1),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30.0),
-                    topRight: Radius.circular(30.0)),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 10,
-                      offset: Offset(0, 3))
-                ]),
-            child: Column(
-              children: [
-                Row(
-                 children : [
-               Image.asset(image),
-               Column( children: [
-                 Text(
-                  text,
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500),
-                )
-                ],)
-               
-                 ])
+    return Material(
+        child: InkWell(
+      child: Container(
+       margin:EdgeInsets.only(bottom: 10),
+        width: Sizes.getScreenWidth(context),
+        height: 50.0,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(0, 3))
+            ]),
+        child:
+            Column(children: [Image.asset(image), 
+            Text(text,
+            style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color:Color.fromRGBO(67, 73, 88, 1)
+                  
 
-              ],
-            )));
+                )), 
+                SizedBox(height: 5.0,),
+            Text(subtitle,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color:Colors.black
+                  
+
+                ))]),
+      ),
+    ));
   }
 }

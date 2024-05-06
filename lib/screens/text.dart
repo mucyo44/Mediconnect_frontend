@@ -15,6 +15,7 @@ class Texts {
   static const subtitle2= 'Sports are very essential for every human life which keeps them fit and fine and physical strength.';
   static const subtitle3 = 'I chose sober because I wanted a better life. I stay sober because I got one.';
   static const subtitle4 = ' Consuming nutritious food is the only way to maintain a healthy lifestyle';
+
   
   
 
