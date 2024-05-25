@@ -27,4 +27,12 @@ class Images {
   static const String stayhydrated = "assets/images/Ellipses.png";
   static const String dosport = "assets/images/Ellipse.png";
   static const String insulin = "assets/images/Rectangle.png";
+  static const String ic_scan = "assets/images/ic_scan.svg";
+  static const String ic_id = "assets/images/ic_id.svg";
+  static const String notilogo = "assets/images/notilogo.png";
+  static const String padlock = "assets/images/Padlock.png";
+  static const String user = "assets/images/userProfile.png";
+  static const String account = "assets/images/testAccount.svg";
+  static const String setting = "assets/images/Settings.svg";
+  static const String history = "assets/images/orderHistory.svg";
 }

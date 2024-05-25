@@ -1,8 +1,13 @@
+import "dart:html";
+
 import "package:flutter/material.dart";
 import "package:flutter_svg/flutter_svg.dart";
 import "package:get/get.dart";
 import "package:mediconnect/screens/homescreen.dart";
 import "package:mediconnect/screens/images.dart";
+import "package:mediconnect/screens/medication.dart";
+import "package:mediconnect/screens/notification.dart";
+import "package:mediconnect/screens/profile.dart";
 import "package:mediconnect/screens/signinscreen.dart";
 import "package:mediconnect/screens/signupscreen.dart";
 import 'package:iconsax/iconsax.dart';
@@ -72,8 +77,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const SplashScreen(),
-    const SignUpScreen(),
-    const SigninScreen()
+    const MedicationPage(),
+    const NotificationScreen(),
+    const ProfilePage()
   ];
 }

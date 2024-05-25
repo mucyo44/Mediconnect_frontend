@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mediconnect/screens/images.dart';
+import 'package:mediconnect/screens/medication_add.dart';
 
 class MedicationPage extends StatelessWidget {
   const MedicationPage({super.key});
@@ -54,19 +55,25 @@ class MedicationPage extends StatelessWidget {
                   title: 'Dosage: 0.5 ml',
                   subtitle1: 'Time: 7:00 AM ',
                   subtitle2: 'Daily'),
-                 
               MedecineList(
                   image: Images.insulin,
                   headline: 'Omeprazole ',
                   title: 'Dosage: 2mg',
                   subtitle1: 'Time: 7:00 AM ',
                   subtitle2: 'Daily'),
-                  SizedBox(height: 40.0,),
+              SizedBox(
+                height: 40.0,
+              ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MedicationAdd()));
+                        },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 64, 124, 226),
+                      backgroundColor: Color.fromRGBO(64, 124, 226, 1),
                       minimumSize: Size(200, 55)),
                   child: Text(
                     'Add medecine',
@@ -77,7 +84,23 @@ class MedicationPage extends StatelessWidget {
                         color: Color.fromRGBO(255, 255, 255, 1)),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: kBottomNavigationBarHeight + 60.0,
+              ),
+              Align(
+                  alignment: Alignment.bottomRight,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          backgroundColor: Color.fromARGB(255, 49, 106, 228),
+                          minimumSize: Size(46, 46)),
+                      child: Icon(
+                        size: 30.0,
+                        Icons.arrow_forward,
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                      )))
             ],
           ),
         ));
@@ -97,80 +120,97 @@ class MedecineList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:EdgeInsets.only(left:40.0,bottom: 10.0),
-        child: Row(children: [
-      Image.asset(image),
-      Column(
-        children: [
-          Text(headline , style: TextStyle( 
-            fontFamily: 'Poppins',
-            fontSize : 12,
-            fontWeight: FontWeight.w500,
-            color: Colors.black
+        margin: EdgeInsets.only(left: 40.0, bottom: 20.0),
+        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          Image.asset(
+            image,
           ),
-          textAlign: TextAlign.left,),
-          Text(title),
-          Row(
-            children: [Text(subtitle1 , 
-              style: TextStyle( 
-            fontFamily: 'Poppins',
-            fontSize : 12,
-            fontWeight: FontWeight.w500,
+          SizedBox(
+            width: 10.0,
           ),
-            ), 
-            Text('--',
-            style: TextStyle( 
-            fontFamily: 'Poppins',
-            fontSize : 10,
-            fontWeight: FontWeight.w300,
-          ),), 
-          Text(subtitle2,
-          style: TextStyle( 
-            fontFamily: 'Poppins',
-            fontSize : 10,
-            fontWeight: FontWeight.w300,
-          ),)],
-          ),
-          SizedBox(height: 10.0,),
-          Row(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(64, 124, 226, 1),
-                    minimumSize: Size(17, 40)),
-                child: Text(
-                  'Modify',
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromARGB(255, 255, 255, 255)),
-                ),
-              ),
-              const SizedBox(
-               width: 10.0,
-              ),
-              OutlinedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(17, 40),
-                  side: BorderSide(color: Color.fromRGBO(64, 124, 226, 1)),
-                ),
-                child: Text(
-                  'Remove',
-                  style: TextStyle(
+              Text(
+                headline,
+                style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromRGBO(64, 124, 226, 1),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+                textAlign: TextAlign.left,
+              ),
+              Text(title),
+              Row(
+                children: [
+                  Text(
+                    subtitle1,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
+                  Text(
+                    '--',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  Text(
+                    subtitle2,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(64, 124, 226, 1),
+                    ),
+                    child: Text(
+                      'Modify',
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 255, 255, 255)),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      side: BorderSide(color: Color.fromRGBO(64, 124, 226, 1)),
+                    ),
+                    child: Text(
+                      'Remove',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(64, 124, 226, 1),
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           )
-        ],
-      )
-    ]));
+        ]));
   }
 }

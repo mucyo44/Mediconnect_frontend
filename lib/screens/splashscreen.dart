@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+          context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
     });
   }
 
@@ -29,6 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
             body: Stack(
               children: [
                 Container(
+                  alignment: Alignment.center,
                   width: 330,
                   height: 462,
                   padding: EdgeInsets.fromLTRB(60.0, 50.0, 0.0, 0.0),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mediconnect/screens/homescreen.dart';
 import 'package:mediconnect/screens/signinscreen.dart';
 import 'package:mediconnect/widgets/password_field.dart';
 import 'package:mediconnect/consts/icons.dart';
@@ -31,7 +33,9 @@ class _SigninScreenState extends State<SignUpScreen> {
                   children: [
                     SizedBox(width: 15.0),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.back();
+                        },
                         icon: Icon(
                           Icons.chevron_left,
                           size: 26.0,
@@ -167,7 +171,7 @@ class _SigninScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const SizedBox(height: 20.0),
-                                Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Already have an account?',
@@ -194,11 +198,14 @@ class _SigninScreenState extends State<SignUpScreen> {
                                 color: Color.fromARGB(255, 64, 124, 226))))
                   ],
                 ),
-              
-                
                 const SizedBox(height: 20.0),
                 ElevatedButton(
-                  onPressed: () {},
+                   onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 64, 124, 226),
                       minimumSize: Size(358, 65)),

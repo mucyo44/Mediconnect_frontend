@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:mediconnect/consts/icons.dart';
+import 'package:mediconnect/screens/homescreen.dart';
 import 'package:mediconnect/screens/signupscreen.dart';
 import 'package:mediconnect/widgets/auth_button.dart';
 import 'package:mediconnect/widgets/password_field.dart';
@@ -29,7 +31,9 @@ class _SigninScreenState extends State<SigninScreen> {
                   children: [
                     SizedBox(width: 15.0),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.back();
+                        },
                         icon: Icon(
                           Icons.chevron_left,
                           size: 26.0,
@@ -88,7 +92,12 @@ class _SigninScreenState extends State<SigninScreen> {
                     )),
                 const SizedBox(height: 25.0),
                 ElevatedButton(
-                  onPressed: () {},
+                    onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 64, 124, 226),
                       minimumSize: Size(358, 65)),

@@ -26,7 +26,7 @@ class SearchBars extends StatelessWidget{
        child:Row(
         children: [
           SizedBox(width:40.0),
-          Text('Search doctors,hospitals ...',
+          Text('Search hospitals ...',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontSize:14,

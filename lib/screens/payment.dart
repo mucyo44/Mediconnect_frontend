@@ -44,7 +44,7 @@ class PaymentPage extends StatelessWidget {
 
       body:Center(
            child: Container(
-            width:422.0,
+            width:MediaQuery.of(context).size.width,
             height: 309.0,
             padding: EdgeInsets.symmetric(horizontal: 30.0),
             decoration: BoxDecoration(

@@ -7,7 +7,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:mediconnect/consts/app_navigation.dart';
+import 'package:mediconnect/screens/hospitalslist.dart';
 import 'package:mediconnect/screens/images.dart';
+import 'package:mediconnect/screens/map_page.dart';
+import 'package:mediconnect/screens/medication.dart';
 import 'package:mediconnect/screens/text.dart';
 import 'package:mediconnect/widgets/curveclippath.dart';
 import 'package:mediconnect/consts/size.dart';
@@ -45,7 +48,14 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Container(
+                    GestureDetector( 
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (HospitalList())));
+                        },
+                      child: Container(
                       margin: EdgeInsets.symmetric(vertical: 20.0),
                       width: 60.0,
                       height: 57.0,
@@ -54,7 +64,8 @@ class HomeScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Color.fromRGBO(64, 124, 226, 1)),
                       child: SvgPicture.asset(Images.doctor),
-                    ),
+                    ),),
+  
                     Text(
                       'Hospitals',
                       style: TextStyle(
@@ -68,7 +79,13 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(width: 30.0),
                 Column(
                   children: [
-                    Container(
+                    GestureDetector( onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (MedicationPage())));
+                        },
+                        child: Container(
                       margin: EdgeInsets.symmetric(vertical: 20.0),
                       width: 60.0,
                       height: 57.0,
@@ -77,7 +94,8 @@ class HomeScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Color.fromRGBO(64, 124, 226, 1)),
                       child: SvgPicture.asset(Images.pharmacy),
-                    ),
+                    ),  ),
+                   
                     Text(
                       'Medication',
                       style: TextStyle(
@@ -91,7 +109,13 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(width: 30.0),
                 Column(
                   children: [
-                    Container(
+                    GestureDetector(  onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (Map_Page())));
+                        },
+                        child:  Container(
                       margin: EdgeInsets.symmetric(vertical: 20.0),
                       width: 60.0,
                       height: 57.0,
@@ -100,7 +124,8 @@ class HomeScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Color.fromRGBO(64, 124, 226, 1)),
                       child: SvgPicture.asset(Images.ambulance),
-                    ),
+                    ),),
+                  
                     Text(
                       'Ambulance',
                       style: TextStyle(
@@ -214,7 +239,7 @@ class _ContainerSliderState extends State<ContainerSlider> {
                
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(microseconds: 800),
-                autoPlayInterval: const Duration(seconds: 60),
+                autoPlayInterval: const Duration(seconds: 2),
                 enlargeCenterPage: true,
                 aspectRatio: 2.0,
                 onPageChanged: ((index, reason) {

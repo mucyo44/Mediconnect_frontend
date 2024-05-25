@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:mediconnect/screens/welcomescreen.dart';
 import 'package:mediconnect/screens/splashscreen.dart';
 
 class OnBoardingController extends GetxController {
@@ -16,7 +17,7 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex.value == 1) {
-      Get.to(SplashScreen());
+      Get.to(WelcomeScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

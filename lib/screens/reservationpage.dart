@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:iconsax/iconsax.dart';
+import 'package:mediconnect/screens/payment.dart';
 
 class ReservationPage extends StatelessWidget {
   const ReservationPage({super.key});
@@ -154,7 +155,12 @@ class ReservationPage extends StatelessWidget {
 
                 const SizedBox(height: 25.0),
                 ElevatedButton(
-                  onPressed: () {},
+                    onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentPage()));
+                        },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromRGBO(64, 124, 226, 1),
                       minimumSize: Size(303.53, 64.41)),
