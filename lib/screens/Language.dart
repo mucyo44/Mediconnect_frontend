@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:get/get.dart";
 
 class LanguagePage extends StatefulWidget {
   const LanguagePage({super.key});
@@ -21,7 +22,7 @@ class _LanguagePageState extends State<LanguagePage> {
         children: [
           SizedBox(width: 15.0),
           IconButton(
-              onPressed: () {},
+              onPressed: ()=>Get.back(),
               icon: Icon(
                 Icons.chevron_left,
                 size: 26.0,

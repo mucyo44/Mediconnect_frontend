@@ -14,11 +14,13 @@ import 'package:mediconnect/screens/medication.dart';
 import 'package:mediconnect/screens/medication_add.dart';
 import 'package:mediconnect/screens/notification.dart';
 import 'package:mediconnect/screens/notificationscreen.dart';
+import 'package:mediconnect/screens/numberr.dart';
 import 'package:mediconnect/screens/onboardingscreen.dart';
 import 'package:mediconnect/screens/payment.dart';
 import 'package:mediconnect/screens/profile.dart';
 import 'package:mediconnect/screens/reservationpage.dart';
 import 'package:mediconnect/screens/reservationsucess.dart';
+import 'package:mediconnect/screens/setting.dart';
 import 'package:mediconnect/screens/signinscreen.dart';
 import 'package:mediconnect/screens/splashscreen.dart';
 import 'package:mediconnect/screens/onBoardController.dart';
@@ -40,6 +42,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(debugShowCheckedModeBanner: false, home:MedicationAdd());
+    return GetMaterialApp(debugShowCheckedModeBanner: false, home:SplashScreen());
   }
 }
