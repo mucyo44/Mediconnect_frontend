@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mediconnect/screens/onboardingscreen.dart';
-import 'package:mediconnect/screens/screen.dart';
+import 'package:mediconnect/screens/Language.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

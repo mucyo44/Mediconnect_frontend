@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:mediconnect/screens/edit_profile.dart';
 import 'package:mediconnect/screens/images.dart';
+import 'package:mediconnect/screens/setting.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -13,7 +14,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.chevron_left)),
+        leading: IconButton(onPressed: ()=>Get.back(), icon: Icon(Icons.chevron_left)),
         title: Text('Profile'),
         centerTitle: true,
       ),
@@ -75,7 +76,7 @@ class ProfilePage extends StatelessWidget {
                       ProfileMenuWidget(
                         icon: Icons.settings,
                         title: 'Settings',
-                        onPress: () {},
+                        onPress: () =>Get.to(()=> const SettingPage()),
                       ),
                       Divider(
                         indent: 20,

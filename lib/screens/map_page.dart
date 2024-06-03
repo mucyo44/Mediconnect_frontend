@@ -13,11 +13,11 @@ class _Map_PageState extends State<Map_Page> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: CameraPosition(
-          target: _pGooglePlex, 
-          zoom: 13),
-      ),
+      // body: GoogleMap(
+      //   initialCameraPosition: CameraPosition(
+      //     target: _pGooglePlex, 
+      //     zoom: 13),
+      // ),
     );
   }
 }

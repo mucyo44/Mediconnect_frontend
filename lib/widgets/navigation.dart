@@ -7,6 +7,7 @@ import "package:mediconnect/screens/homescreen.dart";
 import "package:mediconnect/screens/images.dart";
 import "package:mediconnect/screens/medication.dart";
 import "package:mediconnect/screens/notification.dart";
+import "package:mediconnect/screens/notificationscreen.dart";
 import "package:mediconnect/screens/profile.dart";
 import "package:mediconnect/screens/signinscreen.dart";
 import "package:mediconnect/screens/signupscreen.dart";
@@ -78,7 +79,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const MedicationPage(),
-    const NotificationScreen(),
+    const NotificationTap(),
     const ProfilePage()
   ];
 }

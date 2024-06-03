@@ -89,7 +89,7 @@ class _MedicationAddState extends State<MedicationAdd> {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(top: 10.0),
+                            padding: EdgeInsets.only(top: 5.0),
                             child: Text(
                               'Dosage :',
                               style: TextStyle(
@@ -102,11 +102,13 @@ class _MedicationAddState extends State<MedicationAdd> {
                           ),
                           SizedBox(
                               width:
-                                  16), // Adding spacing between the Text and TextFields
+                                  50.0), // Adding spacing between the Text and TextFields
                           Container(
                             width: 52,
                             height: 16,
                             child: TextField(
+                              cursorHeight: 20.0,
+                              cursorColor: Color.fromRGBO(34, 34, 31, 0.4),
                               decoration: InputDecoration(
                                 hintText: 'Quantity',
                                 hintStyle: TextStyle(
@@ -119,12 +121,14 @@ class _MedicationAddState extends State<MedicationAdd> {
                             ),
                           ),
                           SizedBox(
-                              width:
-                                  8), // Adding spacing between the TextFields
+                            width: 10.0,
+                          ), // Adding spacing between the TextFields
                           Container(
                             width: 52,
                             height: 16,
                             child: TextField(
+                              cursorHeight: 20.0,
+                              cursorColor: Color.fromRGBO(34, 34, 31, 0.4),
                               decoration: InputDecoration(
                                 hintText: 'Unit',
                                 hintStyle: TextStyle(
@@ -138,6 +142,9 @@ class _MedicationAddState extends State<MedicationAdd> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
                       Row(
                         children: [
                           Container(
@@ -149,7 +156,7 @@ class _MedicationAddState extends State<MedicationAdd> {
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(34, 31, 31, 1)),
                           )),
-                          SizedBox(width:10),
+                          SizedBox(width: 10),
                           Container(
                             width: 195,
                             height: 35,
@@ -169,7 +176,10 @@ class _MedicationAddState extends State<MedicationAdd> {
                           )
                         ],
                       ),
-                                            Row(
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
                         children: [
                           Container(
                               child: Text(
@@ -180,7 +190,7 @@ class _MedicationAddState extends State<MedicationAdd> {
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(34, 31, 31, 1)),
                           )),
-                          SizedBox(width:10),
+                          SizedBox(width: 10),
                           Container(
                             width: 195,
                             height: 35,
@@ -200,7 +210,9 @@ class _MedicationAddState extends State<MedicationAdd> {
                           )
                         ],
                       ),
-                     
+                      SizedBox(
+                        height: 20.0,
+                      ),
                       Row(
                         children: [
                           Text(
